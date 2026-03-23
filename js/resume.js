@@ -20,30 +20,30 @@
       celular:       '24 999063455',
       email:         'felipe.louzada18@gmail.com',
       nascimento:    '24/10/1994 – 31 anos',
-      cpf:           '144.196.477-01',
+      cpf:           '',
       genero:        'Masculino',
       escolaridade:  'Técnico/Pós-Médio Completo',
       estadoCivil:   'Solteiro(a)',
       filhos:        'Não',
       pcd:           'Não',
       // --- ENDEREÇO ---
-      cep:           '27.332-350',
-      numero:        '578',
-      complemento:   'Casa',
-      cidade:        'Barra Mansa/RJ',
-      bairro:        'Boa Vista',
-      rua:           'Mauro Granato',
+      cep:           '',
+      numero:        '',
+      complemento:   '',
+      cidade:        '',
+      bairro:        '',
+      rua:           '',
     },
 
     /* --- PRETENSÕES --- */
     // Adicione ou remova objetos conforme necessário
     pretensoes: [
-      { funcao: 'Torneiro Mecânico',           experiencia: 'Não possuo experiência' },
-      { funcao: 'Técnico de Suporte de Sistemas', experiencia: 'Não possuo experiência' },
-      { funcao: 'Ajudante de Torneiro Mecânico', experiencia: 'Não possuo experiência' },
+      { funcao: '',           experiencia: '' },
+      { funcao: '', experiencia: '' },
+      { funcao: '', experiencia: '' },
       { funcao: 'Técnico de Informática',       experiencia: '2 anos' },
     ],
-    salarioPretendido: 'R$ 2.410,00',
+    salarioPretendido: 'R$ 2.800,00',
     empregado:         'Sim',
     estagio:           'Não',
     homeOffice:        'Sim',
@@ -52,28 +52,28 @@
     // Adicione ou remova objetos conforme necessário
     experiencias: [
       {
-        funcao:    'Aprendiz',
-        salario:   'R$ 844,36',
-        ramo:      'Veículos',
-        empresa:   'Viação Sul Fluminense',
+        funcao:    '',
+        salario:   '',
+        ramo:      '',
+        empresa:   '',
         periodo:   'De 17/07/2016 até 17/07/2017 | 1 ano',
-        descricao: 'Cobrador responsável por receber e conferir o pagamento das passagens, auxiliar os passageiros com informações e garantir o correto fluxo de embarque dentro do veículo.',
+        descricao: '',
       },
       {
-        funcao:    'Almoxarife',
-        salario:   'R$ 1.218,28',
-        ramo:      'Veículos',
-        empresa:   'S&a Transportes',
-        periodo:   'De 13/09/2018 até 29/06/2019 | 9 meses',
-        descricao: 'Controle de estoque e ordens de serviço. Peças e ferramentas para manutenção da frota de caminhões do transporte logístico rodoviário.',
+        funcao:    '',
+        salario:   '',
+        ramo:      '',
+        empresa:   '',
+        periodo:   '',
+        descricao: '',
       },
       {
-        funcao:    'Auxiliar Técnico de Campo',
-        salario:   'R$ 1.215,41',
-        ramo:      'Telecomunicações',
-        empresa:   'Supernova Telecom',
-        periodo:   'De 03/09/2015 até 03/12/2015 | 3 meses',
-        descricao: 'Fui responsável por instalar, configurar e testar equipamentos e conexões, além de orientar o cliente e solucionar possíveis problemas de funcionamento.',
+        funcao:    '',
+        salario:   '',
+        ramo:      '',
+        empresa:   '',
+        periodo:   '',
+        descricao: '',
       },
       {
         funcao:    'Técnico de Informática',
@@ -157,8 +157,8 @@
     /* --- TELEFONES PARA RECADOS --- */
     // Adicione ou remova objetos conforme necessário
     telefones: [
-      { numero: '(24) 9 9203 8622', contato: 'Felipe' },
-      { numero: '(24) 9 9953 5556', contato: 'Clarissa' },
+      { numero: '() 9  ', contato: 'Felipe' },
+      { numero: '() 9  ', contato: '' },
     ],
 
     /* --- DISPONIBILIDADE --- */
@@ -169,7 +169,7 @@
     /* --- MOBILIDADE --- */
     habilitacao:   'Sim',
     categoria:     'AB',
-    cnh:           '06250424343',
+    cnh:           '',
     carro:         'Sim',
 
     /* --- OBSERVAÇÕES --- */
@@ -182,7 +182,7 @@
   };
 
   /* ================================================
-     GERAÇÃO DO HTML — não precisa editar abaixo
+      GERAÇÃO DO HTML — não precisa editar abaixo
      ================================================ */
 
   function gerarHTML() {
