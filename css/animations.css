@@ -1,0 +1,62 @@
+/* =============================================
+    ANIMATIONS — Reveal on scroll & entrance
+   ============================================= */
+
+/* --- Reveal on scroll --- */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    transform 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered children */
+.reveal:nth-child(2) { transition-delay: 0.1s; }
+.reveal:nth-child(3) { transition-delay: 0.2s; }
+.reveal:nth-child(4) { transition-delay: 0.3s; }
+
+/* --- Hero entrance --- */
+@keyframes hero-fade-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.hero__terminal  { animation: hero-fade-up 0.6s ease 0.2s both; }
+.hero__name      { animation: hero-fade-up 0.7s ease 0.35s both; }
+.hero__role      { animation: hero-fade-up 0.6s ease 0.5s both; }
+.hero__tagline   { animation: hero-fade-up 0.6s ease 0.6s both; }
+.hero__location  { animation: hero-fade-up 0.6s ease 0.7s both; }
+.hero__actions   { animation: hero-fade-up 0.6s ease 0.8s both; }
+.hero__status    { animation: hero-fade-up 0.6s ease 0.95s both; }
+
+.hero__photo-wrap {
+  animation: hero-fade-up 0.8s ease 0.45s both;
+}
+
+/* --- Role text fade --- */
+@keyframes role-fade {
+  0%   { opacity: 0; transform: translateY(6px); }
+  15%  { opacity: 1; transform: translateY(0); }
+  85%  { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-6px); }
+}
+
+.hero__role-rotating.is-animating {
+  animation: role-fade 0.4s ease both;
+}
+
+/* --- Glow pulse on photo --- */
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.3; }
+  50%       { opacity: 0.55; }
+}
+
+.hero__photo-glow {
+  animation: glow-pulse 4s ease-in-out infinite;
+}

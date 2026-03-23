@@ -1,0 +1,111 @@
+/* =============================================
+   EXPERIENCE
+   ============================================= */
+.experience {
+  background: var(--clr-bg-2);
+}
+
+.timeline {
+  position: relative;
+  padding-left: var(--space-8);
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 12px;
+  bottom: 12px;
+  width: 1px;
+  background: linear-gradient(to bottom, var(--clr-primary), var(--clr-accent), transparent);
+}
+
+.timeline__item {
+  position: relative;
+  margin-bottom: var(--space-12);
+}
+
+.timeline__item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline__dot {
+  position: absolute;
+  left: calc(-1 * var(--space-8) - 5px);
+  top: 4px;
+  width: 11px;
+  height: 11px;
+  background: var(--clr-bg-2);
+  border: 2px solid var(--clr-primary);
+  border-radius: 50%;
+  transition: background var(--transition-base), box-shadow var(--transition-base);
+}
+
+.timeline__item:hover .timeline__dot {
+  background: var(--clr-primary);
+  box-shadow: 0 0 0 4px var(--clr-primary-dim);
+}
+
+.timeline__content {
+  background: var(--clr-surface);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  transition: border-color var(--transition-base), transform var(--transition-base);
+}
+
+.timeline__content:hover {
+  border-color: var(--clr-border-2);
+  transform: translateX(4px);
+}
+
+.timeline__header {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-bottom: var(--space-1);
+}
+
+.timeline__role {
+  font-size: var(--fs-lg);
+  font-weight: 700;
+  color: var(--clr-text);
+}
+
+.timeline__company {
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  color: var(--clr-primary);
+}
+
+.timeline__period {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--clr-text-muted);
+  margin-bottom: var(--space-4);
+}
+
+.timeline__desc {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.timeline__desc li {
+  font-size: var(--fs-sm);
+  color: var(--clr-text-muted);
+  padding-left: var(--space-4);
+  position: relative;
+  line-height: 1.6;
+}
+
+.timeline__desc li::before {
+  content: '›';
+  position: absolute;
+  left: 0;
+  color: var(--clr-primary);
+  font-weight: 700;
+}

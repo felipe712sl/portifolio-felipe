@@ -1,0 +1,383 @@
+/* =============================================
+   RESUME MODAL
+   ============================================= */
+
+/* --- Botão trigger --- */
+.btn--resume {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-6);
+  border-radius: var(--radius-md);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--fs-sm);
+  letter-spacing: 0.04em;
+  background: linear-gradient(135deg, var(--clr-accent), #5b3fd4);
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  box-shadow: 0 4px 20px rgba(123, 97, 255, 0.4);              /* ← ocupa linha inteira */
+  justify-content: center;
+}
+
+.btn--resume:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(123, 97, 255, 0.6);
+  background: linear-gradient(135deg, #9b7fff, #5b3fd4);
+}
+
+/* --- Overlay --- */
+.resume-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 2000;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: var(--space-8) var(--space-4);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-base);
+  overflow-y: auto;
+}
+
+.resume-overlay.is-open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* --- Modal --- */
+.resume-modal {
+  background: #ffffff;
+  color: #1a1a1a;
+  width: 100%;
+  max-width: 780px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transform: translateY(24px);
+  transition: transform var(--transition-slow);
+  position: relative;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.resume-overlay.is-open .resume-modal {
+  transform: translateY(0);
+}
+
+/* --- Fechar --- */
+.resume-modal__close {
+  position: absolute;
+  top: var(--space-4);
+  right: var(--space-4);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #f0f0f0;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: #555;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition-fast), color var(--transition-fast);
+  z-index: 10;
+  line-height: 1;
+}
+
+.resume-modal__close:hover {
+  background: #e0e0e0;
+  color: #111;
+}
+
+/* --- Header do currículo --- */
+.resume__header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 24px 28px 16px;
+  border-bottom: 2px solid #e8e8e8;
+}
+
+.resume__photo {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 2px solid #ddd;
+}
+
+.resume__photo-placeholder {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: #e0e0e0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 700;
+  color: #888;
+  flex-shrink: 0;
+}
+
+.resume__header-info h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 4px;
+}
+
+.resume__header-meta {
+  font-size: 12px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* --- Body --- */
+.resume__body {
+  padding: 0 28px 28px;
+}
+
+/* --- Seção --- */
+.resume__section {
+  margin-top: 20px;
+}
+
+.resume__section-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #8B5CF6;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  border-bottom: 1px solid #e8e8e8;
+  padding-bottom: 4px;
+  margin-bottom: 12px;
+}
+
+/* --- Grid de dados pessoais --- */
+.resume__data-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px 16px;
+}
+
+.resume__data-item {
+  font-size: 12px;
+  color: #333;
+}
+
+.resume__data-item strong {
+  color: #111;
+}
+
+/* --- Pretensões --- */
+.resume__pretensoes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.resume__pretensao-item {
+  font-size: 12px;
+  color: #333;
+}
+
+.resume__pretensao-item .funcao {
+  font-weight: 700;
+  color: #111;
+}
+
+.resume__pretensao-linha {
+  display: flex;
+  gap: 16px;
+  margin-top: 6px;
+  font-size: 12px;
+  flex-wrap: wrap;
+}
+
+.resume__pretensao-info {
+  display: flex;
+  gap: 24px;
+  margin-top: 8px;
+  font-size: 12px;
+  flex-wrap: wrap;
+}
+
+/* --- Experiências --- */
+.resume__exp-item {
+  margin-bottom: 14px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.resume__exp-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.resume__exp-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 4px;
+  margin-bottom: 3px;
+}
+
+.resume__exp-funcao {
+  font-weight: 700;
+  color: #111;
+  font-size: 13px;
+}
+
+.resume__exp-salario {
+  font-size: 12px;
+  color: #333;
+}
+
+.resume__exp-ramo {
+  font-size: 12px;
+  color: #333;
+}
+
+.resume__exp-empresa {
+  font-size: 12px;
+  color: #333;
+  margin-bottom: 2px;
+}
+
+.resume__exp-empresa strong {
+  color: #111;
+}
+
+.resume__exp-desc {
+  font-size: 12px;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* --- Escolaridade --- */
+.resume__escola-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px 16px;
+}
+
+.resume__escola-item {
+  font-size: 12px;
+  color: #333;
+  line-height: 1.6;
+}
+
+.resume__escola-item strong {
+  display: block;
+  color: #111;
+}
+
+/* --- Cursos --- */
+.resume__cursos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px 16px;
+}
+
+.resume__curso-item {
+  font-size: 12px;
+  color: #333;
+  line-height: 1.6;
+}
+
+.resume__curso-item strong {
+  display: block;
+  font-weight: 700;
+  color: #111;
+}
+
+/* --- Habilidades --- */
+.resume__habilidades {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.resume__habilidade-tag {
+  font-size: 11px;
+  background: #f3f0ff;
+  color: #5B21B6;
+  border: 1px solid #DDD6FE;
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+/* --- Telefones --- */
+.resume__telefones-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px 16px;
+  font-size: 12px;
+  color: #333;
+}
+
+/* --- Disponibilidade / Mobilidade --- */
+.resume__info-simples {
+  font-size: 12px;
+  color: #333;
+  line-height: 1.8;
+}
+
+.resume__info-simples strong {
+  color: #111;
+}
+
+.resume__inline-grid {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  font-size: 12px;
+  color: #333;
+}
+
+/* --- Observações --- */
+.resume__obs {
+  font-size: 12px;
+  color: #333;
+  line-height: 1.8;
+}
+
+/* --- Responsivo --- */
+@media (max-width: 600px) {
+  .resume__data-grid,
+  .resume__pretensoes-grid,
+  .resume__escola-grid,
+  .resume__cursos-grid,
+  .resume__telefones-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .resume__exp-header {
+    grid-template-columns: 1fr;
+  }
+
+  .resume__header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .resume__body {
+    padding: 0 16px 20px;
+  }
+}
+
+@media (max-width: 900px) {
+  .btn {
+    font-size: var(--fs-xxs);
+    padding: var(--space-3) var(--space-4);
+    white-space: nowrap;
+  }
+}
