@@ -1,5 +1,5 @@
 /* =============================================
-   CONTACT
+    CONTACT
    ============================================= */
 .contact {
   background: var(--clr-bg);
@@ -114,7 +114,7 @@
 .form-note.error { color: #ff6b6b; }
 
 /* =============================================
-   FOOTER
+    FOOTER
    ============================================= */
 .footer {
   background: var(--clr-bg-2);
@@ -141,6 +141,24 @@
   font-family: var(--font-mono);
   font-size: var(--fs-xs);
   color: var(--clr-text-faint);
+}
+
+.footer__social {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.footer__social a {
+  color: var(--clr-text-muted);
+  transition: color var(--transition-fast), transform var(--transition-fast);
+  display: flex;
+  align-items: center;
+}
+
+.footer__social a:hover {
+  color: var(--clr-primary);
+  transform: translateY(-2px);
 }
 
 .footer__links a {
