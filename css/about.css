@@ -44,8 +44,8 @@
   position: relative;
   border-radius: var(--radius-lg);
   overflow: hidden;
-  border: 1px solid var(--clr-border-2);
-  background: var(--clr-surface);
+  border: none;
+  background: transparent;
   width: 100%;
 }
 
@@ -150,11 +150,12 @@
 
 .about__video-label {
   position: static;
+  justify-content: center;
+  background: transparent; 
   bottom: 0;
   left: 0;
   right: 0;
   padding: var(--space-4) 0 0 0;
-  background: linear-gradient(transparent, rgba(0,0,0,0.7));
   font-family: var(--font-mono);
   font-size: var(--fs-xs);
   color: var(--clr-primary);
