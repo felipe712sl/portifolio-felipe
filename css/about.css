@@ -8,9 +8,16 @@
 .about__grid {
   display: grid;
   grid-template-columns: 1.5fr 1fr;
+  grid-template-areas:
+    "texto stats"
+    "texto video";
   gap: var(--space-16);
   align-items: start;
 }
+
+.about__text  { grid-area: texto; }
+.about__stats { grid-area: stats; }
+.about__video { grid-area: video; }
 
 .about__text p {
   color: var(--clr-text-muted);
@@ -25,6 +32,137 @@
 .about__text strong {
   color: var(--clr-text);
   font-weight: 700;
+}
+
+.about__video {
+  grid-area: video;
+  display: flex;
+  justify-content: center;  /* ← centraliza */
+}
+
+.about__video-frame {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--clr-border-2);
+  background: var(--clr-surface);
+  width: 100%;
+}
+
+.about__video-player {
+  width: 100%;
+  display: block;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+.video-controls {
+  background: linear-gradient(to bottom, rgba(8,12,20,0.85), rgba(8,12,20,0.98));
+  border: 1px solid var(--clr-border);
+  border-top: none;
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+  padding: var(--space-2) var(--space-3) var(--space-3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+/* Barra de progresso */
+.video-controls__progress {
+  position: relative;
+  height: 4px;
+  background: var(--clr-surface-2);
+  border-radius: 2px;
+  cursor: pointer;
+  margin: var(--space-1) 0;
+}
+
+.video-controls__progress-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--clr-accent), var(--clr-primary));
+  border-radius: 2px;
+  pointer-events: none;
+  transition: width 0.1s linear;
+}
+
+.video-controls__progress-thumb {
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  background: var(--clr-primary);
+  border-radius: 50%;
+  pointer-events: none;
+  box-shadow: 0 0 6px var(--clr-primary-glow);
+  transition: left 0.1s linear;
+}
+
+/* Barra inferior */
+.video-controls__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.video-controls__left,
+.video-controls__right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+/* Botões */
+.video-controls__btn {
+  background: none;
+  border: none;
+  color: var(--clr-text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-1);
+  border-radius: var(--radius-sm);
+  transition: color var(--transition-fast), background var(--transition-fast);
+}
+
+.video-controls__btn:hover {
+  color: var(--clr-primary);
+  background: var(--clr-primary-dim);
+}
+
+.video-controls__btn--text {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  color: var(--clr-text-muted);
+  min-width: 28px;
+}
+
+/* Tempo */
+.video-controls__time {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--clr-text-muted);
+  letter-spacing: 0.05em;
+}
+
+.about__video-label {
+  position: static;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: var(--space-4) 0 0 0;
+  background: linear-gradient(transparent, rgba(0,0,0,0.7));
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--clr-primary);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
 }
 
 .about__stats {
@@ -96,6 +234,10 @@
     flex-direction: column;
     width: 100%;
   }
+
+  .about__text  { order: 1; }
+  .about__stats { order: 2; }
+  .about__video { order: 3; } /* ← depois dos cards */
 
   .about .about__text,
   .about .about__stats {
