@@ -355,7 +355,7 @@
   }
 
   .hero__actions .btn {
-    font-size: var(--fs-base); /* ← aumenta no mobile */
+    font-size: var(--fs-md); /* ← aumenta no mobile */
   }
 
   .btn--resume {
