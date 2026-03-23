@@ -1,4 +1,4 @@
-# 👤 Felipe Duarte — Portfólio Pessoal
+# 👤 Felipe Louzada — Portfólio Pessoal
 
 Landing page profissional para prospecção de vagas em TI (Suporte, Help Desk, Infraestrutura, Redes).
 
