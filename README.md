@@ -64,7 +64,6 @@ git commit -m "feat: estrutura inicial do portfólio"
 - [ ] Atualizar e-mail, LinkedIn e GitHub no HTML
 - [ ] Adicionar URLs reais dos projetos nos cards
 - [ ] Revisar datas e detalhes da experiência profissional
-- [ ] Testar em mobile (Chrome DevTools)
 - [ ] Configurar GitHub Pages
 - [ ] Adicionar URL do portfólio no LinkedIn
 
