@@ -106,6 +106,38 @@
       transition: opacity 0.3s ease;
     `;
 
+    // Botão fechar
+    const closeBtn = document.createElement('button');
+    closeBtn.innerHTML = '×';
+    closeBtn.style.cssText = `
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      width: 30px;
+      height: 30px;
+      border-radius: 20%;
+      background: rgba(0, 0, 0, 0.5);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: #ffffff;
+      font-size: 26px;
+      line-height: 1;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      transition: background 0.2s ease, transform 0.2s ease;
+    `;
+
+    closeBtn.addEventListener('mouseenter', () => {
+      closeBtn.style.background  = 'rgba(0,0,0,0.5)';
+      closeBtn.style.transform   = 'scale(1.1)';
+    });
+    closeBtn.addEventListener('mouseleave', () => {
+      closeBtn.style.background  = 'rgba(0,0,0,0.3)';
+      closeBtn.style.transform   = 'scale(1)';
+    });
+
     // Cria imagem ampliada
     const img = document.createElement('img');
     img.src = photo.src;
@@ -121,8 +153,17 @@
       transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
     `;
 
-    overlay.appendChild(img);
+    const wrapper = document.createElement('div');
+    wrapper.style.cssText = `
+      position: relative;
+      display: inline-block;
+    `;
+
+    wrapper.appendChild(img);
+    wrapper.appendChild(closeBtn);
+    overlay.appendChild(wrapper);
     document.body.appendChild(overlay);
+
     document.body.style.overflow = 'hidden';
 
     // Anima entrada
@@ -142,6 +183,11 @@
     }
 
     overlay.addEventListener('click', fechar);
+
+    closeBtn.addEventListener('click', (e) => {
+      e.stopPropagation();  // ← evita disparar o fechar do overlay também
+      fechar();
+    });
 
     // Fecha com ESC
     document.addEventListener('keydown', function handler(e) {

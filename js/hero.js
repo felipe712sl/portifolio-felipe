@@ -47,6 +47,7 @@
     'Help Desk N1/N2',
     'Infraestrutura de TI',
     'Projetos de Redes',
+    'Automação IoT',
     'Desenvolvimento Web',
   ];
   let roleIndex = 0;
