@@ -2,15 +2,14 @@
 (function () {
 
   /* ================================================
-     DADOS DO CURRÍCULO
-     Preencha cada campo abaixo com suas informações
+      DADOS DO CURRÍCULO
      ================================================ */
 
   const dados = {
 
     /* --- CABEÇALHO --- */
-    nome:        'Felipe Silveira Louzada',          // Seu nome completo
-    foto:        'assets/img/profile-photo.jpg',     // Caminho da sua foto
+    nome:        'Felipe Silveira Louzada',
+    foto:        'assets/img/profile-photo.jpg',
     subtitulo:   'Técnico/Pós-Médio Completo | Barra Mansa/RJ | 31 anos | Solteiro(a)',  // Linha sob o nome
     contato:     '24 999063455 | felipe.louzada18@gmail.com',  // Telefone e e-mail no cabeçalho
 
@@ -36,7 +35,6 @@
     },
 
     /* --- PRETENSÕES --- */
-    // Adicione ou remova objetos conforme necessário
     pretensoes: [
       { funcao: '',           experiencia: '' },
       { funcao: '', experiencia: '' },
@@ -49,7 +47,6 @@
     homeOffice:        'Sim',
 
     /* --- EXPERIÊNCIA PROFISSIONAL --- */
-    // Adicione ou remova objetos conforme necessário
     experiencias: [
       {
         funcao:    '',
@@ -94,7 +91,6 @@
     ],
 
     /* --- ESCOLARIDADE --- */
-    // Adicione ou remova objetos conforme necessário
     escolaridade: [
       { nivel: 'Técnico/Pós-Médio Completo', curso: 'Técnico em Eletrônica',   instituicao: 'UNICORP',  conclusao: '2026', cidade: 'Barra Mansa/RJ' },
       { nivel: 'Técnico/Pós-Médio Completo', curso: 'Técnico em Informática',  instituicao: 'UNICORP',  conclusao: '2025', cidade: 'Barra Mansa/RJ' },
@@ -105,7 +101,6 @@
     ],
 
     /* --- CURSOS --- */
-    // Adicione ou remova objetos conforme necessário
     cursos: [
       { nome: 'Hardware e Sistema Operacional', instituicao: 'HRBR Cursos', carga: '20h', conclusao: '2024' },
       { nome: 'Infraestrutura e Redes',         instituicao: 'Udemy',       carga: '25h', conclusao: '2024' },
@@ -113,7 +108,6 @@
     ],
 
     /* --- HABILIDADES --- */
-    // Adicione ou remova strings conforme necessário
     habilidades: [
       'Adaptabilidade A Novos Ambientes E Tecnologias',
       'Administração De Redes Lan/wan',
@@ -149,13 +143,11 @@
     ],
 
     /* --- IDIOMAS --- */
-    // Adicione ou remova objetos conforme necessário
     idiomas: [
       { idioma: 'Inglês', nivel: 'Intermediário' },
     ],
 
     /* --- TELEFONES PARA RECADOS --- */
-    // Adicione ou remova objetos conforme necessário
     telefones: [
       { numero: '() 9  ', contato: 'Felipe' },
       { numero: '() 9  ', contato: '' },
@@ -182,7 +174,7 @@
   };
 
   /* ================================================
-      GERAÇÃO DO HTML — não precisa editar abaixo
+      GERAÇÃO DO HTML
      ================================================ */
 
   function gerarHTML() {
