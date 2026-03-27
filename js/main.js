@@ -450,9 +450,14 @@
   let touchEndX   = 0;
 
   function getCardWidth() {
-    const card = grid.querySelector('.project-card');
-    const gap  = parseInt(getComputedStyle(grid).gap) || 24;
+  const cards = grid.querySelectorAll('.project-card');
+  if (cards.length < 2) {
+    const card = cards[0];
+    const gap  = parseInt(getComputedStyle(grid).columnGap) || 24;
     return (card?.offsetWidth || 0) + gap;
+  }
+  // Usa a diferença real entre o início do card 1 e card 2
+  return cards[1].offsetLeft - cards[0].offsetLeft;
   }
 
   function getVisiveis() {
