@@ -12,12 +12,11 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 var(--space-8);
-  background: transparent;
-  transition: background var(--transition-slow), box-shadow var(--transition-slow);
+  background: var(--clr-bg-4);
 }
 
 .nav.is-scrolled {
-  background: rgba(8, 12, 20, 0.92);
+  background: rgba(1, 2, 17, 0.9);
   box-shadow: 0 1px 0 var(--clr-border);
 }
 
@@ -27,6 +26,13 @@
   font-weight: 700;
   letter-spacing: 0.06em;
   flex-shrink: 1;
+}
+
+.nav__logo-img {
+  height: 60px;
+  width: auto;
+  display: block;
+  object-fit: contain;
 }
 
 .nav__logo-bracket {

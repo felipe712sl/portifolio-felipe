@@ -7,7 +7,7 @@
 
 .skills__categories {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
   gap: var(--space-8);
 }
 
@@ -251,5 +251,7 @@
 }
 
 @media (max-width: 640px) {
-  .skills__categories { grid-template-columns: 1fr; }
+  .skills__categories {
+    grid-template-columns: 1fr;
+  }
 }

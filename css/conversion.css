@@ -1,0 +1,78 @@
+/* =============================================
+    CONVERSION
+   ============================================= */
+.conversion {
+  height: 800px;        /* ← ajuste até ficar bom visualmente */
+  display: flex;
+  align-items: center;
+  overflow: hidden;     /* ← garante que nada vaze */
+  background: var(--clr-bg-4);
+  text-align: center;
+}
+
+.conversion__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-8);
+  width: 100%;
+}
+
+.conversion__phrases {
+  height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.conversion__phrase {
+  font-family: var(--font-conversion);
+  font-size: clamp(3rem, 7vw, 7rem);
+  letter-spacing: 0.05em;
+  font-weight: 800;
+  color: var(--clr-text);
+  line-height: 1.15;
+  max-width: 800px;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.conversion__highlight {
+  color: var(--clr-primary);
+}
+
+.conversion__phrase.is-leaving {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+.conversion__phrase.is-entering {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.conversion__sub {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--clr-text-muted);
+  line-height: 1.8;
+  letter-spacing: 0.04em;
+}
+
+.conversion__cta {
+  font-size: var(--fs-md);
+  padding: var(--space-4) var(--space-10);
+}
+
+@media (max-width: 768px) {
+  .conversion__phrase {
+    font-size: clamp(3.5rem, 6vw, 2rem);
+  }
+
+  .conversion__cta {
+    width: 100%;
+    justify-content: center;
+  }
+}

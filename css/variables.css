@@ -6,8 +6,10 @@
   --clr-bg:          #080c14;
   --clr-bg-2:        #0d1220;
   --clr-bg-3:        #121929;
+  --clr-bg-4:        #010211;
   --clr-surface:     #141c2e;
   --clr-surface-2:   #1a2540;
+  --clr-surface-3:   #0e1421;
   --clr-border:      rgba(0, 229, 255, 0.12);
   --clr-border-2:    rgba(0, 229, 255, 0.22);
 
@@ -30,6 +32,7 @@
   --font-mono:       'JetBrains Mono', monospace;
   --font-hero:    'Archivo Black', sans-serif;
   --font-title: 'Archivo Black', sans-serif;
+  --font-conversion: 'Bebas Neue', sans-serif;
 
   --fs-xxs:   0.5rem;
   --fs-xs:   0.75rem;

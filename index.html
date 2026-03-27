@@ -33,10 +33,8 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=JetBrains+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap"
-    rel="stylesheet" 
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bebas+Neue&family=JetBrains+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  
 
   <!-- CSS -->
   <link rel="stylesheet" href="css/reset.css" />
@@ -49,6 +47,7 @@
   <link rel="stylesheet" href="css/experience.css" />
   <link rel="stylesheet" href="css/projects.css" />
   <link rel="stylesheet" href="css/education.css" />
+  <link rel="stylesheet" href="css/conversion.css" />
   <link rel="stylesheet" href="css/contact.css" />
   <link rel="stylesheet" href="css/animations.css" />
   <link rel="stylesheet" href="css/resume.css" />
@@ -63,9 +62,9 @@
   <!-- ========== NAVBAR ========== -->
   <nav class="nav" id="nav">
     <div class="nav__logo">
-      <span class="nav__logo-bracket">[</span>
-      <span class="nav__logo-text">Felipe</span>
-      <span class="nav__logo-bracket">]</span>
+      <div class="nav__logo">
+  <img src="assets/img/nav-logo.png" alt="Felipe Louzada" class="nav__logo-img" />
+</div>
     </div>
     <ul class="nav__links" id="navLinks">
       <li><a href="#home" class="nav__link">topo</a></li>
@@ -373,7 +372,7 @@
 
         <div class="skills__category reveal">
           <h3 class="skills__category-title">
-            <span class="skills__category-icon">⬡</span> Ferramentas & Soft Skills
+            <span class="skills__category-icon">⬡</span> Ferramentas & Inteligência Artificial
           </h3>
           <div class="skills__tags">
             <span class="skill-tag">ITSM / Chamados</span>
@@ -382,6 +381,19 @@
             <span class="skill-tag">Active Directory</span>
             <span class="skill-tag">VirtualBox / VMware</span>
             <span class="skill-tag">AutoCAD</span>
+            <span class="skill-tag">Claude Code</span>
+            <span class="skill-tag">Antigravity</span>
+            <span class="skill-tag">Cursor</span>
+            <span class="skill-tag">FLUX</span>
+            <span class="skill-tag">Nano Banana</span>
+          </div>
+        </div>
+
+        <div class="skills__category reveal">
+          <h3 class="skills__category-title">
+            <span class="skills__category-icon">⬡</span>Soft Skills
+          </h3>
+          <div class="skills__tags">            
             <span class="skill-tag">Documentação técnica</span>
             <span class="skill-tag">Comunicação clara</span>
             <span class="skill-tag">Resolução de problemas</span>
@@ -453,8 +465,62 @@
           </div>
         </div>
 
-      </div>
-    </div>
+        <!-- Extras ocultos -->
+        <div class="timeline__extra" id="timelineExtra">
+
+          <div class="timeline__item reveal">
+            <div class="timeline__dot"></div>
+            <div class="timeline__content">
+              <div class="timeline__header">
+                <h3 class="timeline__role">Técnico de Informática</h3>
+                <span class="timeline__company">REIMAQ</span>
+              </div>
+              <span class="timeline__period">Região Sul Fluminense</span>
+              <ul class="timeline__desc">
+                <li>Manutenção e reparo de equipamentos de informática</li>
+                <li>Atendimento ao cliente e diagnóstico de falhas técnicas</li>
+                <li>Formatação, instalação de sistemas e configuração de periféricos</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline__item reveal">
+            <div class="timeline__dot"></div>
+            <div class="timeline__content">
+              <div class="timeline__header">
+                <h3 class="timeline__role">Técnico de Informática</h3>
+                <span class="timeline__company">REIMAQ</span>
+              </div>
+              <span class="timeline__period">Região Sul Fluminense</span>
+              <ul class="timeline__desc">
+                <li>Manutenção e reparo de equipamentos de informática</li>
+                <li>Atendimento ao cliente e diagnóstico de falhas técnicas</li>
+                <li>Formatação, instalação de sistemas e configuração de periféricos</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- adicione mais aqui futuramente -->
+        </div>
+
+        <div class="education__toggle">
+          <button class="btn btn--ghost education__toggle-btn" id="timelineToggle">
+            <span>Ver mais</span>
+            <svg class="education__toggle-icon" 
+              width="16" 
+              height="16" 
+              viewBox="0 0 24 24" 
+              fill="none" 
+              stroke="currentColor" 
+              stroke-width="2"
+              >
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </button>
+        </div>
+
+      </div><!-- fim timeline -->
+    </div><!-- fim container -->
   </section>
 
   <!-- ========== PROJETOS ========== -->
@@ -465,80 +531,153 @@
         <h2 class="section-title">Projetos</h2>
       </div>
 
-      <div class="projects__grid">
+      <div class="projects__carousel">
+          <button class="projects__arrow projects__arrow--prev" id="projectsPrev" aria-label="Anterior">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+          </button>
 
-        <div class="project-card reveal">
-          <div class="project-card__header">
-            <span class="project-card__type">Fullstack · Em andamento</span>
-            <div class="project-card__links">
-              <a href="#" class="project-card__link" aria-label="GitHub" title="Ver no GitHub">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                  <path
-                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
-                </svg>
-              </a>
-              <a href="#" class="project-card__link" aria-label="Demo" title="Ver demo">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                  <polyline points="15 3 21 3 21 9" />
-                  <line x1="10" y1="14" x2="21" y2="3" />
-                </svg>
-              </a>
-            </div>
-          </div>
-          <h3 class="project-card__title">Soberana Autopeças</h3>
-          <p class="project-card__desc">
-            Landing page e e-commerce completo para autopeças em Volta Redonda, RJ. Projeto real com cliente —
-            responsivo, com carrosséis dinâmicos, SEO semântico e backend Node.js + PostgreSQL.
-          </p>
-          <div class="project-card__stack">
-            <span>HTML5</span><span>CSS3 BEM</span><span>JavaScript</span><span>Node.js</span><span>PostgreSQL</span>
-          </div>
-        </div>
+          <div class="projects__track-wrap">
 
-        <div class="project-card reveal">
-          <div class="project-card__header">
-            <span class="project-card__type">Fullstack · Estudo</span>
-            <div class="project-card__links">
-              <a href="#" class="project-card__link" aria-label="GitHub" title="Ver no GitHub">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                  <path
-                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
-                </svg>
-              </a>
-            </div>
-          </div>
-          <h3 class="project-card__title">E-commerce API REST</h3>
-          <p class="project-card__desc">
-            API fullstack com autenticação JWT + bcrypt, CRUD de produtos, carrinho de compras e gerenciamento de
-            pedidos. Arquitetura MVC com PostgreSQL e boas práticas de segurança.
-          </p>
-          <div class="project-card__stack">
-            <span>Node.js</span><span>Express</span><span>PostgreSQL</span><span>JWT</span><span>bcrypt</span>
-          </div>
-        </div>
+            <div class="projects__grid" id="projectsGrid">
 
-        <div class="project-card project-card--highlight reveal">
-          <div class="project-card__header">
-            <span class="project-card__type">Frontend · Este projeto</span>
-            <div class="project-card__links">
-              <a href="#" class="project-card__link" aria-label="GitHub" title="Ver no GitHub">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                  <path
-                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
-                </svg>
-              </a>
+              <div class="project-card reveal">
+                <div class="project-card__header">
+                  <span class="project-card__type">Fullstack · Em andamento</span>
+                  <div class="project-card__links">
+                    <a href="#" class="project-card__link" aria-label="GitHub" title="Ver no GitHub">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                          d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+                      </svg>
+                    </a>
+                    <a href="#" class="project-card__link" aria-label="Demo" title="Ver demo">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                        <polyline points="15 3 21 3 21 9" />
+                        <line x1="10" y1="14" x2="21" y2="3" />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+                <h3 class="project-card__title">Soberana Autopeças</h3>
+                <p class="project-card__desc">
+                  Landing page e e-commerce completo para autopeças em Volta Redonda, RJ. Projeto real com cliente —
+                  responsivo, com carrosséis dinâmicos, SEO semântico e backend Node.js + PostgreSQL.
+                </p>
+                <div class="project-card__stack">
+                  <span>HTML5</span><span>CSS3 BEM</span><span>JavaScript</span><span>Node.js</span><span>PostgreSQL</span>
+                </div>
+              </div>
+
+              <div class="project-card reveal">
+                <div class="project-card__header">
+                  <span class="project-card__type">Fullstack · Estudo</span>
+                  <div class="project-card__links">
+                    <a href="#" class="project-card__link" aria-label="GitHub" title="Ver no GitHub">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                          d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+                <h3 class="project-card__title">E-commerce API REST</h3>
+                <p class="project-card__desc">
+                  API fullstack com autenticação JWT + bcrypt, CRUD de produtos, carrinho de compras e gerenciamento de
+                  pedidos. Arquitetura MVC com PostgreSQL e boas práticas de segurança.
+                </p>
+                <div class="project-card__stack">
+                  <span>Node.js</span><span>Express</span><span>PostgreSQL</span><span>JWT</span><span>bcrypt</span>
+                </div>
+              </div>
+
+              <div class="project-card project-card--highlight reveal">
+                <div class="project-card__header">
+                  <span class="project-card__type">Frontend · Este projeto</span>
+                  <div class="project-card__links">
+                    <a href="#" class="project-card__link" aria-label="GitHub" title="Ver no GitHub">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                          d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+                <h3 class="project-card__title">Portfólio Pessoal</h3>
+                <p class="project-card__desc">
+                  Esta landing page. Design técnico com dark theme, animações CSS, cursor personalizado e layout responsivo.
+                  Código limpo, semântico e versionado com Conventional Commits.
+                </p>
+                <div class="project-card__stack">
+                  <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>GitHub</span>
+                </div>
+              </div>
+
+              <div class="project-card reveal">
+                <div class="project-card__header">
+                  <span class="project-card__type">Fullstack · Em andamento</span>
+                  <div class="project-card__links">
+                    <a href="#" class="project-card__link" aria-label="GitHub" title="Ver no GitHub">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                          d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+                      </svg>
+                    </a>
+                    <a href="#" class="project-card__link" aria-label="Demo" title="Ver demo">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                        <polyline points="15 3 21 3 21 9" />
+                        <line x1="10" y1="14" x2="21" y2="3" />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+                <h3 class="project-card__title">Soberana Autopeças</h3>
+                <p class="project-card__desc">
+                  Landing page e e-commerce completo para autopeças em Volta Redonda, RJ. Projeto real com cliente —
+                  responsivo, com carrosséis dinâmicos, SEO semântico e backend Node.js + PostgreSQL.
+                </p>
+                <div class="project-card__stack">
+                  <span>HTML5</span><span>CSS3 BEM</span><span>JavaScript</span><span>Node.js</span><span>PostgreSQL</span>
+                </div>
+              </div>
+
+              <div class="project-card reveal">
+                <div class="project-card__header">
+                  <span class="project-card__type">Fullstack · Em andamento</span>
+                  <div class="project-card__links">
+                    <a href="#" class="project-card__link" aria-label="GitHub" title="Ver no GitHub">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                          d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+                      </svg>
+                    </a>
+                    <a href="#" class="project-card__link" aria-label="Demo" title="Ver demo">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                        <polyline points="15 3 21 3 21 9" />
+                        <line x1="10" y1="14" x2="21" y2="3" />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+                <h3 class="project-card__title">Soberana Autopeças</h3>
+                <p class="project-card__desc">
+                  Landing page e e-commerce completo para autopeças em Volta Redonda, RJ. Projeto real com cliente —
+                  responsivo, com carrosséis dinâmicos, SEO semântico e backend Node.js + PostgreSQL.
+                </p>
+                <div class="project-card__stack">
+                  <span>HTML5</span><span>CSS3 BEM</span><span>JavaScript</span><span>Node.js</span><span>PostgreSQL</span>
+                </div>
+              </div>
+
             </div>
+
           </div>
-          <h3 class="project-card__title">Portfólio Pessoal</h3>
-          <p class="project-card__desc">
-            Esta landing page. Design técnico com dark theme, animações CSS, cursor personalizado e layout responsivo.
-            Código limpo, semântico e versionado com Conventional Commits.
-          </p>
-          <div class="project-card__stack">
-            <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>GitHub</span>
-          </div>
-        </div>
+
+          <button class="projects__arrow projects__arrow--next" id="projectsNext" aria-label="Próximo">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
 
       </div>
     </div>
@@ -555,18 +694,17 @@
       <div class="education__grid">
 
         <div class="edu-card reveal">
-          <div class="edu-card__icon">🎓</div>
+          <div class="edu-card__icon"><img src="assets/img/icons/graduacao.png"></div>
           <div class="edu-card__content">
             <span class="edu-card__type">Graduação</span>
             <h3 class="edu-card__title">Tecnólogo em Sistemas para Internet</h3>
             <span class="edu-card__institution">FAETERJ — Barra Mansa, RJ</span>
-            <p class="edu-card__desc">Formação superior com foco em desenvolvimento web, banco de dados, redes de
-              computadores e programação orientada a objetos.</p>
+            <p class="edu-card__desc">Formação superior com foco em desenvolvimento web, marketing digital, e-commerce, boas práticas, banco de dados e redes.</p>
           </div>
         </div>
 
         <div class="edu-card reveal">
-          <div class="edu-card__icon">📜</div>
+          <div class="edu-card__icon"><img src="assets/img/icons/tec-informatica.png"></div>
           <div class="edu-card__content">
             <span class="edu-card__type">Curso Técnico</span>
             <h3 class="edu-card__title">Técnico em Informática</h3>
@@ -577,7 +715,7 @@
         </div>
 
         <div class="edu-card reveal">
-          <div class="edu-card__icon">⚡</div>
+          <div class="edu-card__icon"><img src="assets/img/icons/tec-eletronica.png"></div>
           <div class="edu-card__content">
             <span class="edu-card__type">Curso Técnico</span>
             <h3 class="edu-card__title">Técnico em Eletrônica</h3>
@@ -588,7 +726,7 @@
         </div>
 
         <div class="edu-card edu-card--cert reveal">
-          <div class="edu-card__icon">🏅</div>
+          <div class="edu-card__icon"><img src="assets/img/icons/aprendendo.png"></div>
           <div class="edu-card__content">
             <span class="edu-card__type">Aprendizado contínuo</span>
             <h3 class="edu-card__title">Estudos em andamento</h3>
@@ -598,6 +736,63 @@
           </div>
         </div>
 
+          <!-- Cards ocultos inicialmente -->
+          <div class="education__extra" id="educationExtra">
+
+            <div class="edu-card reveal">
+              <div class="edu-card__icon"><img src="assets/img/icons/tec-eletronica.png"></div>
+              <div class="edu-card__content">
+                <span class="edu-card__type">Curso Técnico</span>
+                <h3 class="edu-card__title">Técnico em Eletrônica</h3>
+                <span class="edu-card__institution">Escola Técnica — Sul Fluminense</span>
+                <p class="edu-card__desc">Base em eletrônica analógica e digital, componentes, circuitos e fundamentos de
+                  telecomunicações.</p>
+              </div>
+            </div>
+
+
+            <!-- adicione quantos quiser -->
+          </div>
+
+        </div>
+
+        <!-- Botão ver mais -->
+        <div class="education__toggle">
+          <button class="btn btn--ghost education__toggle-btn" id="educationToggle">
+            <span>Ver mais</span>
+            <svg class="education__toggle-icon" 
+              width="16" 
+              height="16" 
+              viewBox="0 0 24 24" 
+              fill="none" 
+              stroke="currentColor" 
+              stroke-width="2"
+              >
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONVERSÃO ========== -->
+  <section class="conversion section" id="conversao">
+    <div class="container">
+      <div class="conversion__content">
+
+        <div class="conversion__phrases">
+          <p class="conversion__phrase" id="conversionPhrase">
+            Apresente-se profissionalmente com excelência.
+          </p>
+        </div>
+
+        <p class="conversion__sub">
+          Páginas de apresentação personalizadas para profissionais e empresas.<br/>
+          Do zero ao ar — design exclusivo, sem templates genéricos.
+        </p>
+        
       </div>
     </div>
   </section>
@@ -660,6 +855,21 @@
               </svg>
               <span>Barra Mansa, RJ — Brasil</span>
             </div>
+
+            <!-- Mapa -->
+            <div class="contact__map">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3685.123456789!2d-44.1759!3d-22.5441!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjLCsDMyJzM4LjgiUyA0NMKwMTAnMzMuMiJX!5e0!3m2!1spt-BR!2sbr!4v1234567890"
+                width="100%"
+                height="220"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Localização — Barra Mansa, RJ"
+              ></iframe>
+            </div>
+
           </div>
         </div>
 

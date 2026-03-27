@@ -115,10 +115,73 @@
   border-radius: var(--radius-sm);
 }
 
+.projects__carousel {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.projects__track-wrap {
+  overflow: hidden;
+  flex: 1;
+}
+
+.projects__grid {
+  display: flex;
+  gap: var(--space-6);
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform;
+}
+
+.project-card {
+  flex: 0 0 calc(33.333% - var(--space-4));
+  min-width: 0;
+}
+
+/* Setas */
+.projects__arrow {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--clr-surface);
+  border: 1px solid var(--clr-border);
+  color: var(--clr-text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.projects__arrow:hover {
+  border-color: var(--clr-primary);
+  color: var(--clr-primary);
+  background: var(--clr-primary-dim);
+}
+
+.projects__arrow:disabled {
+  opacity: 0.3;
+  cursor: default;
+  pointer-events: none;
+}
+
 @media (max-width: 900px) {
-  .projects__grid { grid-template-columns: 1fr 1fr; }
+  .projects__grid { 
+    grid-template-columns: 1fr 1fr; 
+  }
+  
+  project-card {
+    flex: 0 0 calc(50% - var(--space-3));
+  }
 }
 
 @media (max-width: 600px) {
-  .projects__grid { grid-template-columns: 1fr; }
+  .projects__grid { 
+    grid-template-columns: 1fr; 
+  }
+
+  .project-card {
+    flex: 0 0 100%;
+  }
 }

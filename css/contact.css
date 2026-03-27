@@ -2,7 +2,7 @@
     CONTACT
    ============================================= */
 .contact {
-  background: var(--clr-bg);
+  background: var(--clr-bg-3);
 }
 
 .contact__grid {
@@ -56,11 +56,23 @@
   transform: none;
 }
 
+.contact__map {
+  margin-top: var(--space-4);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--clr-border);
+}
+
+.contact__map iframe {
+  display: block;
+  filter: grayscale(30%) invert(5%);  /* ← leve tom escuro para combinar com o tema */
+}
+
 /* Form */
 .contact__form {
   display: flex;
   flex-direction: column;
-  gap: var(--space-4);
+  gap: var(--space-8);
 }
 
 .form-group {
@@ -78,13 +90,13 @@
 }
 
 .form-input {
-  background: var(--clr-surface);
+  background: var(--clr-surface-3);
   border: 1px solid var(--clr-border);
   border-radius: var(--radius-md);
   padding: var(--space-3) var(--space-4);
   color: var(--clr-text);
   font-family: var(--font-display);
-  font-size: var(--fs-sm);
+  font-size: var(--fs-base);
   transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
   outline: none;
 }
@@ -100,7 +112,7 @@
 
 .form-textarea {
   resize: vertical;
-  min-height: 120px;
+  min-height: 180px;
 }
 
 .form-note {
@@ -108,6 +120,10 @@
   font-size: var(--fs-xs);
   text-align: center;
   min-height: 18px;
+}
+
+.contact__form .btn--full {
+  font-size: var(--fs-sm); /* ← ajuste o tamanho desejado */
 }
 
 .form-note.success { color: var(--clr-green); }

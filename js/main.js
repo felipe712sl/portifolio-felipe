@@ -68,8 +68,8 @@
 
       frame++;
 
-      // Para após 2.5s e faz fade out
-      if (frame > 150) {
+      // Fade out (cada 100 = 0,6 segundos)
+      if (frame > 100) {
         canvas.style.transition = 'opacity 0.8s ease';
         canvas.style.opacity    = '0';
         setTimeout(() => canvas.remove(), 900);
@@ -95,7 +95,7 @@
     overlay.style.cssText = `
       position: fixed;
       inset: 0;
-      background: rgba(0, 0, 0, 0.92);
+      background: rgba(0, 0, 0, 0.2);
       backdrop-filter: blur(8px);
       z-index: 9998;
       display: flex;
@@ -113,12 +113,12 @@
       position: absolute;
       top: 12px;
       right: 12px;
-      width: 30px;
-      height: 30px;
+      width: 25px;
+      height: 25px;
       border-radius: 20%;
-      background: rgba(0, 0, 0, 0.5);
-      border: 1px solid rgba(255,255,255,0.2);
-      color: #ffffff;
+      background: rgba(0, 0, 0, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0);
+      color: rgb(255, 255, 255, 0.2);
       font-size: 26px;
       line-height: 1;
       cursor: pointer;
@@ -130,11 +130,11 @@
     `;
 
     closeBtn.addEventListener('mouseenter', () => {
-      closeBtn.style.background  = 'rgba(0,0,0,0.5)';
+      closeBtn.style.background  = 'rgba(0,0,0,0.2)';
       closeBtn.style.transform   = 'scale(1.1)';
     });
     closeBtn.addEventListener('mouseleave', () => {
-      closeBtn.style.background  = 'rgba(0,0,0,0.3)';
+      closeBtn.style.background  = 'rgba(0,0,0,0.1)';
       closeBtn.style.transform   = 'scale(1)';
     });
 
@@ -357,7 +357,8 @@
 
       frame++;
 
-      if (frame > 150) {
+      //Tempo de execução
+      if (frame > 100) {
         canvas.style.transition = 'opacity 0.8s ease';
         canvas.style.opacity    = '0';
         setTimeout(() => canvas.remove(), 900);
@@ -371,4 +372,156 @@
   });
 })();
 
+// --- Frases de conversão rotativas ---
+(function () {
+  const el = document.getElementById('conversionPhrase');
+  if (!el) return;
 
+  const frases = [
+  'Apresente-se de forma profissional, com <span class="conversion__highlight">excelência</span>.',
+  'Imagine uma página personalizada, <span class="conversion__highlight">só sua</span>.',
+  'Aumente as chances de <span class="conversion__highlight">conectar-se</span> às oportunidades.',
+  'Sua presença digital começa com uma <span class="conversion__highlight">boa impressão</span>.',
+  'Do zero ao ar — rápido, <span class="conversion__highlight">exclusivo</span> e profissional.',
+];
+
+  let atual = 0;
+
+  function proximaFrase() {
+    // Sorteia uma frase diferente da atual
+    let proximo;
+    do {
+      proximo = Math.floor(Math.random() * frases.length);
+    } while (proximo === atual);
+
+    // Sai com fade up
+    el.classList.add('is-leaving');
+
+    setTimeout(() => {
+      atual = proximo;
+      el.innerHTML = frases[atual];
+
+      // Entra de baixo para cima
+      el.classList.remove('is-leaving');
+      el.classList.add('is-entering');
+
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          el.classList.remove('is-entering');
+        });
+      });
+    }, 500);
+  }
+
+  // Troca a cada 3.5 segundos
+  setInterval(proximaFrase, 5000);
+})();
+
+// --- Ver mais certificações ---
+(function () {
+  const btn   = document.getElementById('educationToggle');
+  const extra = document.getElementById('educationExtra');
+  if (!btn || !extra) return;
+
+  btn.addEventListener('click', () => {
+    const open = extra.classList.toggle('is-open');
+    btn.classList.toggle('is-open', open);
+    btn.querySelector('span').textContent = open
+      ? 'Ver menos'
+      : 'Ver mais';
+
+    // Scroll suave para os novos cards ao abrir
+    if (open) {
+      extra.querySelector('.edu-card')?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  });
+})();
+
+// --- Carrossel de projetos ---
+(function () {
+  const grid = document.getElementById('projectsGrid');
+  const prev = document.getElementById('projectsPrev');
+  const next = document.getElementById('projectsNext');
+
+  if (!grid || !prev || !next) return;
+
+  let atual = 0;
+  let touchStartX = 0;
+  let touchEndX   = 0;
+
+  function getCardWidth() {
+    const card = grid.querySelector('.project-card');
+    const gap  = parseInt(getComputedStyle(grid).gap) || 24;
+    return (card?.offsetWidth || 0) + gap;
+  }
+
+  function getVisiveis() {
+  const wrap  = grid.parentElement;
+  const card  = grid.querySelector('.project-card');
+  if (!card || !wrap) return 1;
+  return Math.max(1, Math.floor(wrap.offsetWidth / card.offsetWidth));
+  }
+
+  function total() {
+    return grid.querySelectorAll('.project-card').length;
+  }
+
+  function atualizar() {
+  const offset = atual * getCardWidth();
+  grid.style.transform = `translateX(-${offset}px)`;
+
+  const max = total() - getVisiveis();
+  prev.disabled = atual === 0;
+  next.disabled = atual >= max;
+  }
+
+  function irPrev() {
+    if (atual > 0) { atual--; atualizar(); }
+  }
+
+  function irNext() {
+  const max = total() - getVisiveis();
+  if (atual < max) { atual++; atualizar(); }
+  }
+
+  prev.addEventListener('click', irPrev);
+  next.addEventListener('click', irNext);
+
+  // --- Swipe touch ---
+  grid.addEventListener('touchstart', (e) => {
+    touchStartX = e.touches[0].clientX;
+  }, { passive: true });
+
+  grid.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].clientX;
+    const diff = touchStartX - touchEndX;
+
+    if (Math.abs(diff) > 50) { // ← threshold mínimo de 50px
+      if (diff > 0) irNext();
+      else irPrev();
+    }
+  }, { passive: true });
+
+  // Inicializa
+  atualizar();
+  window.addEventListener('resize', atualizar, { passive: true });
+})();
+
+// --- Ver mais experiências ---
+(function () {
+  const btn   = document.getElementById('timelineToggle');
+  const extra = document.getElementById('timelineExtra');
+  if (!btn || !extra) return;
+
+  btn.addEventListener('click', () => {
+    const open = extra.classList.toggle('is-open');
+    btn.classList.toggle('is-open', open);
+    btn.querySelector('span').textContent = open
+      ? 'Ver menos'
+      : 'Ver mais';
+
+    if (open) {
+      extra.querySelector('.timeline__item')?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  });
+})();
