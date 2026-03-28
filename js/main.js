@@ -530,3 +530,23 @@
     }
   });
 })();
+
+// --- Botão conversão preenche formulário ---
+(function () {
+  const btn     = document.getElementById('conversionCta');
+  const subject = document.getElementById('subject');
+  const message = document.getElementById('message');
+
+  if (!btn || !subject || !message) return;
+
+  btn.addEventListener('click', () => {
+    // Aguarda o scroll terminar antes de preencher
+    setTimeout(() => {
+      subject.value = 'Quero meu site profissional';
+      message.value = 'Olá Felipe, vim pela sua página e gostaria de saber mais sobre o desenvolvimento de uma página de apresentação personalizada. Pode me passar mais detalhes?';
+
+      // Destaca o campo de nome para o usuário preencher
+      document.getElementById('name')?.focus();
+    }, 800);
+  });
+})();
