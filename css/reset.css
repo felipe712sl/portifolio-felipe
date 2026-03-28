@@ -1,7 +1,9 @@
 /* =============================================
     RESET — portfolio-felipe
    ============================================= */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -18,16 +20,22 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-img, video, svg {
+img,
+video,
+svg {
   display: block;
   max-width: 100%;
 }
 
-input, button, textarea, select {
+input,
+button,
+textarea,
+select {
   font: inherit;
 }
 
-ul, ol {
+ul,
+ol {
   list-style: none;
 }
 

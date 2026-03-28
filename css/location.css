@@ -4,177 +4,179 @@
    mas a diferença visual fica no layout de duas colunas.
    ─────────────────────────────────────────────────────────── */
 .localizacao {
-    background: var(--branco);
-    padding: var(--espaco-2xl) 0;
-    border-top: 1px solid var(--cinza-claro);
+  background: var(--branco);
+  padding: var(--espaco-2xl) 0;
+  border-top: 1px solid var(--cinza-claro);
 }
 
 /* Duas colunas: mapa (maior) + informações (menor) */
 .localizacao__inner {
-    display: grid;
-    grid-template-columns: 1fr 420px;
-    gap: var(--espaco-2xl);
-    align-items: start;
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: var(--espaco-2xl);
+  align-items: start;
 }
 
 /* Container do mapa com altura fixa e borda arredondada */
 .localizacao__mapa {
-    height: 420px;
-    border-radius: var(--raio-lg);
-    overflow: hidden;           /* aplica o border-radius no iframe */
-    border: 1px solid var(--cinza-claro);
-    box-shadow:
-        0 8px 32px rgba(0, 0, 0, 0.52),       /* sombra principal */
-        0 2px 8px rgba(0, 0, 0, 0.58),         /* sombra secundária suave */
-        0 0 0 1px rgba(0, 0, 0, 0.56);         /* borda cinza sutil */
+  height: 420px;
+  border-radius: var(--raio-lg);
+  overflow: hidden; /* aplica o border-radius no iframe */
+  border: 1px solid var(--cinza-claro);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.52),
+    /* sombra principal */ 0 2px 8px rgba(0, 0, 0, 0.58),
+    /* sombra secundária suave */ 0 0 0 1px rgba(0, 0, 0, 0.56); /* borda cinza sutil */
 }
 
 /* O iframe herda 100% do container — não precisa de estilo extra */
 .localizacao__mapa iframe {
-    display: block;             /* remove espaço fantasma abaixo do iframe */
+  display: block; /* remove espaço fantasma abaixo do iframe */
 }
 
 /* Coluna de informações: blocos empilhados com gap */
 .localizacao__info {
-    display: flex;
-    flex-direction: column;
-    gap: var(--espaco-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco-xl);
 }
 
 /* Cada bloco: ícone + conteúdo lado a lado */
 .localizacao__bloco {
-    display: flex;
-    gap: var(--espaco-md);
-    align-items: flex-start;
+  display: flex;
+  gap: var(--espaco-md);
+  align-items: flex-start;
 }
 
 /* Círculo com ícone — mesmo padrão dos diferenciais */
 .localizacao__icone {
-    width: 44px;
-    height: 44px;
-    background: rgba(21, 101, 192, 0.08);
-    border: 1px solid rgba(21, 101, 192, 0.15);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.2rem;
-    flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  background: rgba(21, 101, 192, 0.08);
+  border: 1px solid rgba(21, 101, 192, 0.15);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  flex-shrink: 0;
 }
 
 .localizacao__titulo-bloco {
-    font-size: 0.75rem;
-    font-weight: 700;
-    color: var(--azul-primario);
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    margin-bottom: var(--espaco-sm);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--azul-primario);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: var(--espaco-sm);
 }
 
 /* Remove itálico padrão do <address> */
 .localizacao__endereco {
-    font-style: normal;
-    font-size: 0.95rem;
-    color: var(--cinza-escuro);
-    line-height: 1.7;
+  font-style: normal;
+  font-size: 0.95rem;
+  color: var(--cinza-escuro);
+  line-height: 1.7;
 }
 
 /* Lista de horários: dia à esquerda, hora à direita */
 .localizacao__horarios {
-    display: flex;
-    flex-direction: column;
-    gap: var(--espaco-xs);
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco-xs);
 }
 
 .localizacao__horarios li {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 0.9rem;
-    gap: var(--espaco-lg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  gap: var(--espaco-lg);
 }
 
 .localizacao__horarios span {
-    color: var(--cinza-escuro);
+  color: var(--cinza-escuro);
 }
 
 .localizacao__horarios strong {
-    color: var(--azul-escuro);
-    font-weight: 600;
+  color: var(--azul-escuro);
+  font-weight: 600;
 }
 
 .localizacao__fechado {
-    color: var(--cinza-medio) !important;
-    font-weight: 400 !important;
+  color: var(--cinza-medio) !important;
+  font-weight: 400 !important;
 }
 
 .localizacao__telefone {
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: var(--azul-primario);
-    text-decoration: none;
-    transition: color var(--transicao);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--azul-primario);
+  text-decoration: none;
+  transition: color var(--transicao);
 }
 
 .localizacao__telefone:hover {
-    color: var(--azul-claro);
+  color: var(--azul-claro);
 }
 
 /* Telefone e WhatsApp lado a lado */
 .localizacao__contatos {
-    display: flex;
-    align-items: center;
-    gap: var(--espaco-md);
-    flex-wrap: wrap;
+  display: flex;
+  align-items: center;
+  gap: var(--espaco-md);
+  flex-wrap: wrap;
 }
 
 .localizacao__whatsapp {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--espaco-xs);
-    background: #345a8f;        /* verde oficial do WhatsApp */
-    color: var(--branco);
-    font-size: 0.9rem;
-    font-weight: 600;
-    padding: 6px 14px;
-    border-radius: var(--raio-md);
-    text-decoration: none;
-    transition: filter var(--transicao), transform var(--transicao);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--espaco-xs);
+  background: #345a8f; /* verde oficial do WhatsApp */
+  color: var(--branco);
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: var(--raio-md);
+  text-decoration: none;
+  transition:
+    filter var(--transicao),
+    transform var(--transicao);
 }
 
 .localizacao__whatsapp-icon {
-    width: 30px;
-    height: 30px;
-    object-fit: contain;
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
 }
 
 .localizacao__whatsapp:hover {
-    filter: brightness(1.1);
-    transform: translateY(-2px);
+  filter: brightness(1.1);
+  transform: translateY(-2px);
 }
 
 /* Botão ocupa largura total da coluna */
 .localizacao__btn-rota {
-    width: 100%;
-    justify-content: center;
-    margin-top: var(--espaco-sm);
+  width: 100%;
+  justify-content: center;
+  margin-top: var(--espaco-sm);
 }
 
 /* ── RESPONSIVIDADE ── */
 @media (max-width: 900px) {
-    /* Empilha mapa e informações no tablet */
-    .localizacao__inner {
-        grid-template-columns: 1fr;
-    }
+  /* Empilha mapa e informações no tablet */
+  .localizacao__inner {
+    grid-template-columns: 1fr;
+  }
 
-    /* Mapa um pouco menor quando empilhado */
-    .localizacao__mapa {
-        height: 320px;
-    }
+  /* Mapa um pouco menor quando empilhado */
+  .localizacao__mapa {
+    height: 320px;
+  }
 }
 
 @media (max-width: 480px) {
-    .localizacao__mapa {
-        height: 260px;
-    }
+  .localizacao__mapa {
+    height: 260px;
+  }
 }

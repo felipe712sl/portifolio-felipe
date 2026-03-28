@@ -1,22 +1,18 @@
 {
-  "extends": [
-    "development"
-  ],
+  "extends": ["development"],
   "hints": {
     "no-inline-styles": "off",
     "axe/text-alternatives": [
       "default",
       {
-        "image-alt": "off"
-      }
+        "image-alt": "off",
+      },
     ],
     "compat-api/html": [
       "default",
       {
-        "ignore": [
-          "iframe[referrerpolicy=no-referrer-when-downgrade]"
-        ]
-      }
-    ]
-  }
+        "ignore": ["iframe[referrerpolicy=no-referrer-when-downgrade]"],
+      },
+    ],
+  },
 }

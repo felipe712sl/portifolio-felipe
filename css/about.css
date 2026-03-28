@@ -15,9 +15,15 @@
   align-items: start;
 }
 
-.about__text  { grid-area: texto; }
-.about__stats { grid-area: stats; }
-.about__video { grid-area: video; }
+.about__text {
+  grid-area: texto;
+}
+.about__stats {
+  grid-area: stats;
+}
+.about__video {
+  grid-area: video;
+}
 
 .about__text p {
   color: var(--clr-text-muted);
@@ -27,7 +33,9 @@
   text-align: justify;
 }
 
-.about__text p:last-child { margin-bottom: 0; }
+.about__text p:last-child {
+  margin-bottom: 0;
+}
 
 .about__text strong {
   color: var(--clr-text);
@@ -37,7 +45,7 @@
 .about__video {
   grid-area: video;
   display: flex;
-  justify-content: center;  /* ← centraliza */
+  justify-content: center; /* ← centraliza */
 }
 
 .about__video-frame {
@@ -56,7 +64,11 @@
 }
 
 .video-controls {
-  background: linear-gradient(to bottom, rgba(8,12,20,0.85), rgba(8,12,20,0.98));
+  background: linear-gradient(
+    to bottom,
+    rgba(8, 12, 20, 0.85),
+    rgba(8, 12, 20, 0.98)
+  );
   border: 1px solid var(--clr-border);
   border-top: none;
   border-radius: 0 0 var(--radius-lg) var(--radius-lg);
@@ -124,7 +136,9 @@
   justify-content: center;
   padding: var(--space-1);
   border-radius: var(--radius-sm);
-  transition: color var(--transition-fast), background var(--transition-fast);
+  transition:
+    color var(--transition-fast),
+    background var(--transition-fast);
 }
 
 .video-controls__btn:hover {
@@ -151,7 +165,7 @@
 .about__video-label {
   position: static;
   justify-content: center;
-  background: transparent; 
+  background: transparent;
   bottom: 0;
   left: 0;
   right: 0;
@@ -180,7 +194,9 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-1);
-  transition: border-color var(--transition-base), transform var(--transition-base);
+  transition:
+    border-color var(--transition-base),
+    transform var(--transition-base);
 }
 
 .stat-card--link {
@@ -236,9 +252,15 @@
     width: 100%;
   }
 
-  .about__text  { order: 1; }
-  .about__stats { order: 2; }
-  .about__video { order: 3; } /* ← depois dos cards */
+  .about__text {
+    order: 1;
+  }
+  .about__stats {
+    order: 2;
+  }
+  .about__video {
+    order: 3;
+  } /* ← depois dos cards */
 
   .about .about__text,
   .about .about__stats {

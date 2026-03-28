@@ -1,20 +1,23 @@
 /* js/animations.js — Scroll reveal */
 (function () {
-  const reveals = document.querySelectorAll('.reveal');
+  const reveals = document.querySelectorAll(".reveal");
 
-  if ('IntersectionObserver' in window) {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.12 });
+  if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12 },
+    );
 
-    reveals.forEach(el => observer.observe(el));
+    reveals.forEach((el) => observer.observe(el));
   } else {
     // Fallback: show all immediately
-    reveals.forEach(el => el.classList.add('is-visible'));
+    reveals.forEach((el) => el.classList.add("is-visible"));
   }
 })();

@@ -1,14 +1,13 @@
 /* js/hero.js — Terminal typing effect + role rotator */
 (function () {
-
   // --- Terminal typing ---
-  const cmdEl = document.getElementById('terminalCmd');
+  const cmdEl = document.getElementById("terminalCmd");
   const commands = [
-    'whoami',
-    'cat perfil.txt',
-    'ping recrutador.local',
-    'ssh felipe@suporte-ti',
-    'git log --oneline',
+    "whoami",
+    "cat perfil.txt",
+    "ping recrutador.local",
+    "ssh felipe@suporte-ti",
+    "git log --oneline",
   ];
   let cmdIndex = 0;
   let charIndex = 0;
@@ -41,27 +40,26 @@
   setTimeout(typeCmd, 1200);
 
   // --- Role rotator ---
-  const roleEl = document.getElementById('rotatingRole');
+  const roleEl = document.getElementById("rotatingRole");
   const roles = [
-    'Suporte Técnico',
-    'Help Desk N1/N2',
-    'Infraestrutura de TI',
-    'Projetos de Redes',
-    'Automação IoT',
-    'Desenvolvimento Web',
+    "Suporte Técnico",
+    "Help Desk N1/N2",
+    "Infraestrutura de TI",
+    "Projetos de Redes",
+    "Automação IoT",
+    "Desenvolvimento Web",
   ];
   let roleIndex = 0;
 
   function rotateRole() {
     if (!roleEl) return;
     roleIndex = (roleIndex + 1) % roles.length;
-    roleEl.classList.add('is-animating');
+    roleEl.classList.add("is-animating");
     setTimeout(() => {
       roleEl.textContent = roles[roleIndex];
-      roleEl.classList.remove('is-animating');
+      roleEl.classList.remove("is-animating");
     }, 400);
   }
 
   setInterval(rotateRole, 2800);
-
 })();

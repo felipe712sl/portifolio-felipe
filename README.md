@@ -39,7 +39,7 @@ portfolio-felipe/
 
 1. Suba o repositório no GitHub
 2. Vá em **Settings → Pages**
-3. Em *Source*, selecione `main` branch e pasta `/root`
+3. Em _Source_, selecione `main` branch e pasta `/root`
 4. Aguarde ~1 minuto — sua página estará em:
    `https://seu-usuario.github.io/portfolio-felipe`
 
@@ -71,3 +71,4 @@ git commit -m "feat: estrutura inicial do portfólio"
 ---
 
 Desenvolvido com HTML, CSS & JS puro · Felipe Louzada
+```

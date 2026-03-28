@@ -57,7 +57,7 @@
 }
 
 .skill-item::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   border-radius: var(--radius-sm);
@@ -70,7 +70,7 @@
     transparent 100%
   );
   background-size: 200% 100%;
-  background-position: 200% 0;  /* ← começa da direita */
+  background-position: 200% 0; /* ← começa da direita */
   opacity: 0;
   transition: opacity var(--transition-base);
   pointer-events: none;
@@ -82,8 +82,12 @@
 }
 
 @keyframes skill-sweep {
-  0%   { background-position: 200% 0; }  /* ← direita para esquerda */
-  100% { background-position: -100% 0; }
+  0% {
+    background-position: 200% 0;
+  } /* ← direita para esquerda */
+  100% {
+    background-position: -100% 0;
+  }
 }
 
 /* Skill items com barras HUD */
@@ -140,7 +144,9 @@
   padding: var(--space-1) var(--space-3);
   border-radius: var(--radius-sm);
   letter-spacing: 0.04em;
-  transition: background var(--transition-fast), transform var(--transition-fast);
+  transition:
+    background var(--transition-fast),
+    transform var(--transition-fast);
 }
 
 .skill-tag:hover {
@@ -156,7 +162,9 @@
   pointer-events: none;
   opacity: 0;
   transform: scale(0.9);
-  transition: opacity 0.1s ease, transform 0.1s ease;
+  transition:
+    opacity 0.1s ease,
+    transform 0.1s ease;
 }
 
 .skill-dialog.is-visible {
@@ -172,8 +180,7 @@
     /* borda externa pixel */
     0 0 0 3px #c8d8e8,
     0 0 0 6px #2c3e50,
-    /* sombra pixel */
-    6px 6px 0 0 rgba(0,0,0,0.4);
+    /* sombra pixel */ 6px 6px 0 0 rgba(0, 0, 0, 0.4);
   padding: 12px 16px;
   min-width: 220px;
   max-width: 320px;
@@ -209,7 +216,7 @@
 }
 
 .skill-dialog__entry::before {
-  content: '▶';
+  content: "▶";
   position: absolute;
   left: 0;
   font-size: 7px;
@@ -242,12 +249,19 @@
 }
 
 @keyframes blink8 {
-  0%, 100% { opacity: 1; }
-  50%       { opacity: 0; }
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
 }
 
 @media (max-width: 1024px) {
-  .skills__categories { grid-template-columns: 1fr 1fr; }
+  .skills__categories {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 @media (max-width: 640px) {
