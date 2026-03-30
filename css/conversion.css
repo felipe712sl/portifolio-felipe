@@ -2,7 +2,7 @@
     CONVERSION
    ============================================= */
 .conversion {
-  height: 800px; /* ← ajuste até ficar bom visualmente */
+  height: 1100px; /* ← ajuste até ficar bom visualmente */
   display: flex;
   align-items: center;
   overflow: hidden; /* ← garante que nada vaze */
@@ -19,7 +19,7 @@
 }
 
 .conversion__phrases {
-  height: 320px;
+  height: 480px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -57,7 +57,7 @@
 
 .conversion__sub {
   font-family: var(--font-mono);
-  font-size: var(--fs-xs);
+  font-size: var(--fs-md);
   color: var(--clr-text-muted);
   line-height: 1.8;
   letter-spacing: 0.04em;
@@ -69,6 +69,13 @@
 }
 
 @media (max-width: 768px) {
+  .conversion {
+    height: 650px;
+  }
+
+  .conversion__phrases {
+    height: 320px;
+  }
   .conversion__phrase {
     font-size: clamp(3.5rem, 6vw, 2rem);
   }
@@ -76,5 +83,9 @@
   .conversion__cta {
     width: 100%;
     justify-content: center;
+  }
+
+  .conversion__sub {
+    font-size: var(--fs-xs);
   }
 }
