@@ -5,7 +5,7 @@
   const commands = [
     "whoami",
     "cat perfil.txt",
-    "ping recrutador.local",
+    "ping support.local",
     "ssh felipe@suporte-ti",
     "git log --oneline",
   ];
@@ -62,4 +62,83 @@
   }
 
   setInterval(rotateRole, 2800);
+})();
+
+// --- Status de disponibilidade ---
+(function () {
+  const status = document.querySelector(".hero__status");
+  if (!status) return;
+
+  // ================================================
+  // ALTERE AQUI para mudar o status
+
+  // const MODO = "disponivel"; // verde
+  // const MODO = "ocupado"; // vermelho
+  // const MODO = "freelance"; // ciano
+  // const MODO = "trabalhando"; // amarelo
+  // const MODO = "ferias"; // branco
+
+  const MODO = "freelance";
+  // ================================================
+
+  const config = {
+    disponivel: {
+      texto: "Disponível",
+      cor: "var(--clr-green)",
+      fundo: "var(--clr-green-dim)",
+      borda: "rgba(0, 255, 163, 0.2)",
+    },
+    ocupado: {
+      texto: "Indisponível no momento",
+      cor: "#ff6b6b",
+      fundo: "rgba(255, 107, 107, 0.1)",
+      borda: "rgba(255, 107, 107, 0.2)",
+    },
+    freelance: {
+      texto: "Disponível para freelance",
+      cor: "var(--clr-primary)",
+      fundo: "var(--clr-primary-dim)",
+      borda: "rgba(0, 229, 255, 0.2)",
+    },
+    trabalhando: {
+      texto: "Trabalhando",
+      cor: "#f5c842",
+      fundo: "rgba(245, 200, 66, 0.1)",
+      borda: "rgba(245, 200, 66, 0.2)",
+    },
+    ferias: {
+      texto: "De férias — retorno em breve",
+      cor: "#f0f0f0",
+      fundo: "rgba(240, 240, 240, 0.08)",
+      borda: "rgba(240, 240, 240, 0.15)",
+    },
+  };
+
+  const atual = config[MODO] || config.disponivel;
+
+  // 1. Aplica a variável CSS --dot-color no container
+  //    O dot herda essa variável automaticamente via CSS
+  status.style.setProperty("--dot-color", atual.cor);
+
+  // 2. Aplica as cores no container do status
+  status.style.color = atual.cor;
+  status.style.background = atual.fundo;
+  status.style.border = `1px solid ${atual.borda}`;
+
+  // 3. Atualiza o texto mantendo o dot existente no HTML
+  const dot = status.querySelector(".hero__status-dot");
+  status.innerHTML = "";
+
+  if (dot) status.appendChild(dot);
+
+  const span = document.createElement("span");
+  span.textContent = atual.texto;
+  status.appendChild(span);
+
+  // 4. Reaplica a variável após recriar o innerHTML
+  //    (innerHTML limpa os estilos inline do container)
+  status.style.setProperty("--dot-color", atual.cor);
+  status.style.color = atual.cor;
+  status.style.background = atual.fundo;
+  status.style.border = `1px solid ${atual.borda}`;
 })();
