@@ -70,6 +70,7 @@
   font-size: var(--fs-sm);
   color: var(--clr-text-muted);
   line-height: 1.6;
+  text-align: justify;
 }
 
 .education__extra {

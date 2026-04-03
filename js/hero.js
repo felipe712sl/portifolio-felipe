@@ -6,6 +6,7 @@
     "whoami",
     "cat perfil.txt",
     "ping support.local",
+    "net start spooler",
     "ssh felipe@suporte-ti",
     "git log --oneline",
   ];
