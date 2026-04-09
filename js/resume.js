@@ -95,7 +95,7 @@
       },
       {
         funcao: "Desenvolvedor Frontend — Freelancer Remoto",
-        salario: "48/h",
+        salario: "R$ 48/h",
         ramo: "Agronegócio — Tecnologia",
         empresa: "AGREX do Brasil",
         periodo: "De Out/2020 até Jan/2021 | 4 meses",
